@@ -1,0 +1,7 @@
+Options All -Indexes
+
+RewriteEngine On 
+
+RewriteBase /Ecooper/
+
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?url=$1
