@@ -11,10 +11,6 @@
     <!-- Vendor CSS Files -->
     <link href="Views/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="Views/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Views/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="Views/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="Views/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="Views/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
     <!-- Template Main CSS File -->
     <link href="Views/assets/css/style.css" rel="stylesheet">
@@ -33,9 +29,9 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="index.php">Accueill</a></li>
+                <li><a class="nav-link scrollto active" href="index">Accueill</a></li>
                 <li><a class="nav-link scrollto" href="#about">A propos</a></li>
-                <li class="dropdown"><a href="boutique.php"><span>Boutique</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="boutique"><span>Boutique</span> <i class="far fa-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Huiles</a></li>
                         <li><a href="#">Crèmes</a></li>
@@ -45,11 +41,11 @@
                     </ul>
                 </li>
                 <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
-                <li><a href="SignIn.php"><i class="fal fa-user"></i></a></li>
-                <li><a href=""><i class="fal fa-shopping-bag"></i></a></li>
+                <li><a href="SignIn"><i class="fal fa-user"></i></a></li>
+                <li><a href="Panier"><i class="fal fa-shopping-bag"></i></a></li>
                 <li><a href=""><i class="far fa-search"></i></a></li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle text-white"></i>
+            <i class="far fa-bars mobile-nav-toggle text-white"></i>
         </nav>
     </div>
 </header>

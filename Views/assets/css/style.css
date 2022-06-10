@@ -74,7 +74,7 @@ h6 {
 }
 
 #header .logo img {
-    max-height: 65px;
+    max-height: 60px;
 }
 
 
@@ -503,60 +503,6 @@ section {
 
 
 /*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-
-.breadcrumbs {
-    padding: 15px 0;
-    background: #fbfbfb;
-    min-height: 40px;
-}
-
-@media (max-width: 992px) {
-    .breadcrumbs {
-        margin-top: 66px;
-    }
-}
-
-.breadcrumbs h2 {
-    font-size: 28px;
-    font-weight: 300;
-}
-
-.breadcrumbs ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-}
-
-.breadcrumbs ol li+li {
-    padding-left: 10px;
-}
-
-.breadcrumbs ol li+li::before {
-    display: inline-block;
-    padding-right: 10px;
-    color: #3c3c3c;
-    content: "/";
-}
-
-@media (max-width: 768px) {
-    .breadcrumbs .d-flex {
-        display: block !important;
-    }
-    .breadcrumbs ol {
-        display: block;
-    }
-    .breadcrumbs ol li {
-        display: inline-block;
-    }
-}
-
-
-/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
@@ -803,4 +749,20 @@ section {
 
 .portfolio-details .portfolio-description p {
     padding: 0;
+}
+
+@media (max-width: 769px) {
+    .bienvenue {
+        width: 95% !important;
+    }
+    .tables {
+        display: flex!important;
+        flex-direction: column!important;
+    }
+    .table1 {
+        width: 100% !important;
+    }
+    .table2 {
+        width: 100% !important;
+    }
 }

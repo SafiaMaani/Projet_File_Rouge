@@ -10,7 +10,7 @@ function autoload($class_name)
         'Controllers/',
         'Database/',
         'Models/'
-    ];
+        ];
     foreach ($paths as $path) {
         $file = sprintf($path . '%s.php', $class_name);
         if (is_file($file)) {
@@ -22,9 +22,9 @@ function autoload($class_name)
 
 
 
-
 // $parts = explode('\\', $class_name);
 // $name = array_pop($parts);
+
 
 //spl_autoload_register() allows you to register multiple functions (or static methods from your own Autoload class) that PHP will put into a stack/queue and call sequentially when a "new Class" is declared.
 //callback function:

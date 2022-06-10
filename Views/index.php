@@ -1,6 +1,4 @@
-<?php include_once "Includes/header.php"; ?>
-
-<!-- ======= Hero Section ======= -->
+<!-- ======= Slide Section ======= -->
 <section id="slide" class="pt-5 pb-0">
     <div id="carouselExampleControls" class="carousel slide w-100 h-100" data-bs-ride="carousel">
         <div class="carousel-inner w-100 h-100">
@@ -24,7 +22,7 @@
         </button>
     </div>
 </section>
-<!-- End Hero -->
+<!-- End Slides -->
 
 <!-- ======= Cta Section ======= -->
 <section id="cta" class="cta">
@@ -39,7 +37,7 @@
                 </ul>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">
-                <a class="cta-btn align-middle" href="boutique.php">Passer la commande</a>
+                <a class="cta-btn align-middle" href="boutique">Passer la commande</a>
             </div>
         </div>
 
@@ -55,38 +53,33 @@
             <div class="row no-gutters">
                 <div class="col-lg-4 col-md-6">
                     <div class="icon-box">
-                        <div class="icon"><i class="bi bi-flower1"><a href=""> Huiles</a></i></div>
+                        <div class="icon"><i class="fal fa-flower"><a href=""> Huiles</a></i></div>
                         <p class="description">Une collection variée des huiles 100% bio avec ses propriétés assouplissantes, hydratantes, protectrices et régénératrices sont de véritables alliées pour lutter contre le vieillissement de la peau.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="icon-box">
-                        <div class="icon"><i class="bi bi-flower1"><a href=""> Crèmes</a></i></div>
+                        <div class="icon"><i class="fal fa-flower"><a href=""> Crèmes</a></i></div>
                         <p class="description">une crème à base d'ingrédients naturels, doux sur la peau, empêche toute irritation qui peut survenir et permet même à celles qui ont une peau sensible</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="icon-box">
-                        <div class="icon"><i class="bi bi-flower1"><a href=""> Parfums</a></i></div>
+                        <div class="icon"><i class="fal fa-flower"><a href=""> Parfums</a></i></div>
                         <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trade stravi</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="icon-box">
-                        <div class="icon"><i class="bi bi-flower1"><a href=""> Baumes à lèvres</a></i></div>
+                        <div class="icon"><i class="fal fa-flower"><a href=""> Baumes à lèvres</a></i></div>
                         <p class="description">Utilisez régulièrement une baume à lèvres afin de garder leurs hydratation</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="icon-box">
-                        <div class="icon"><i class="bi bi-box-seam"><a href=""> Packs personnalisés</a></i></div>
+                        <div class="icon"><i class="fal fa-box-full"><a href=""> Packs personnalisés</a></i></div>
                         <p class="description">Formulez votre pack selon vous besoins et bénéficiez d'un prix exceptionnel</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="icon-box">
-                        <img src="Views/assets/img/about.jpg" alt="" class="featured-services-img ">
                     </div>
                 </div>
             </div>
@@ -135,5 +128,4 @@
 
 </main>
 <!-- End #main -->
-<?php include_once "Includes/footer.php"; ?>
 

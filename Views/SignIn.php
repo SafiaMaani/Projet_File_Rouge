@@ -1,5 +1,3 @@
-<?php include_once "Includes/header.php"; ?>
-
 <section class="d-flex">
     <div class="w-50 d-flex align-items-center justify-content-center">
         <form onsubmit="return(validation())" method="POST" class="d-flex flex-column w-75">
@@ -15,7 +13,7 @@
             <input class="mb-1" type="password" id="mdp" name="password">
             <div id="error2" class="text-danger mb-1"></div>
 
-            <button name="submit" type="submit" class="botona btn btn-success mb-4 mt-3">Se connecter</button>
+            <button name="submit" type="submit" class="btn btn-success mb-4 mt-3"><a href="Profile" class="text-white">Se connecter</a></button>
             <p>Vous avez pas de compte ? <a href="SignUp" class="text-decoration-none">Inscrivez-vous</a></p>
         </form>
     </div>
@@ -23,5 +21,3 @@
         <img class="w-75" src="Views/assets/img/logo.jpg" alt="">
     </div>
 </section>
-
-<?php include_once "Includes/footer.php"; ?>
