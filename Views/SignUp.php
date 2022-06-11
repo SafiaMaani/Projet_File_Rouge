@@ -1,11 +1,10 @@
-<?php include_once "Views/Includes/header.php" ?>
-<?php 
-include_once "Controllers/UsersController.php";
-include_once "Models/UsersModel.php";
+<?php
+include_once "Views/Includes/header.php";
 
 $addUser = new UsersController();
 $addUser->register();
 ?>
+
 <section class="d-flex">
     <div class="w-50 d-flex align-items-center justify-content-center">
         <form onsubmit="return(validation())" method="POST" class="d-flex flex-column w-75">
@@ -37,5 +36,3 @@ $addUser->register();
         <img class="w-75" src="Views/assets/img/logo.jpg" alt="">
     </div>
 </section>
-
-<?php include_once "Views/Includes/footer.php" ?>
