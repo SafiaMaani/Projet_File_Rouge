@@ -1,6 +1,6 @@
 <?php
 
-class Produit
+class ProduitModel
 {
     static public function getAll()
     {

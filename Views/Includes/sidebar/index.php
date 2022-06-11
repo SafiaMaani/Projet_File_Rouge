@@ -29,7 +29,7 @@
           <a href=""><span class="fa fa-sticky-note"></span>Commandes</a>
         </li>
         <li>
-          <a href="">
+          <a href="Deconnexion">
             <span class="far fa-sign-out"></span> Se déconnecter
           </a>
         </li>

@@ -4,7 +4,7 @@ class ProduitController
 {
 	public function getAllProduit()
 	{
-		$produiuts = Produit::getAll();
+		$produiuts = ProduitModel::getAll();
 		return $produiuts;
 	}
 
@@ -21,14 +21,7 @@ class ProduitController
 				'coop_name' => $_POST['coop_name'],
 			);
 
-			Produit::add($data);
-
-			// if($result === 'ok'){
-			// 	Session::set('success','Employé Ajouté');
-			// 	Redirect::to('index');
-			// }else{
-			// 	echo $result;
-			// }
+			ProduitModel::add($data);
 		}
 	}
 
@@ -36,7 +29,7 @@ class ProduitController
 	{
 		if (isset($_POST['delete'])) {
 			$data['id_produit'] = $_POST['id_produit'];
-			$result = Produit::delete($data);
+			$result = ProduitModel::delete($data);
 			if ($result === 'ok') {
 				header('Location:Dashboard');
 			}
@@ -56,23 +49,17 @@ class ProduitController
 				'quantite' => $_POST['quantite'],
 				'coop_name' => $_POST['coop_name'],
 			);
-			$result = Produit::update($data);
+			$result = ProduitModel::update($data);
 			if ($result === 'ok') {
 				header('location:Dashboard');
 			}
-			// if ($result === 'ok') {
-			// 	Session::set('success', 'Employé Modifié');
-			// 	Redirect::to('home');
-			// } else {
-			// 	echo $result;
-			// }
 		}
 	}
 
 	public function getOneId()
 	{
 		if (isset($_POST['id_produit'])) {
-			$result = Produit::getOne($_POST['id_produit']);
+			$result = ProduitModel::getOne($_POST['id_produit']);
 			return $result;
 		}
 	}

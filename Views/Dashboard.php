@@ -61,9 +61,6 @@
                         </div>
                     </form>
                     <?php
-                    include_once "Controllers/ProduitController.php";
-                    include_once "Models/ProduitModel.php";
-
                     $addPrdt = new ProduitController();
                     $addPrdt->addPrdt();
                     ?>
@@ -99,9 +96,6 @@
                     <tbody>
                         <tr>
                             <?php
-                            include_once "Controllers/ProduitController.php";
-                            include_once "Models/ProduitModel.php";
-
                             $data = new ProduitController();
                             $produits = $data->getAllProduit();
 
