@@ -1,3 +1,4 @@
+<?php include_once "Views/Includes/header.php" ?>
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio mt-5">
     <div class="container">
@@ -168,3 +169,4 @@
         </div>
     </div>
 </div> -->
+<?php include_once "Views/Includes/footer.php" ?>

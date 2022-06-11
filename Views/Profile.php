@@ -1,3 +1,4 @@
+<?php include_once "Views/Includes/header.php" ?>
 <div class="bg-light mt-5 pt-5 d-flex flex-column align-items-center">
     <div class="bienvenue w-50">
         <div class="border border-success mb-2 p-2 rounded d-flex flex-column align-items-center">
@@ -20,3 +21,4 @@
         </div>
     </div>
 </div>
+<?php include_once "Views/Includes/footer.php" ?>

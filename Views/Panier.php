@@ -1,3 +1,4 @@
+<?php include_once "Views/Includes/header.php" ?>
 <div class="d-flex mt-5 p-5">
     <div class="panier w-50 p-3 border-end border-3">
         <table class="table">
@@ -94,3 +95,4 @@
         </form>
     </div>
 </div>
+<?php include_once "Views/Includes/footer.php" ?>

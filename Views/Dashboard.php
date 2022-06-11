@@ -1,15 +1,10 @@
-<div class="bg-light mt-5 pt-5 d-flex flex-column align-items-center">
+<div class="d-flex bg-light">
 
-    <div class="bienvenue border border-success mx-2 p-2 rounded w-75 d-flex flex-column align-items-center" style="background-color: #5cb874;">
-        <h1>Bienvenue Mr l'administrateur</h1>
-        <div>
-            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus"></i></i> Ajouter un produit</button>
-            <button type="button" class="btn btn-secondary"><i class="far fa-sign-out"></i> Se déconnecter</button>
-        </div>
-    </div>
+    <!-- SIDE BARE -->
+    <?php include_once "Views/Includes/sidebar/index.php" ?>
 
     <!-- Modal Ajout Produit-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -69,20 +64,25 @@
                     include_once "Controllers/ProduitController.php";
                     include_once "Models/ProduitModel.php";
 
-                    $add = new ProduitController();
-                    $add->addPrdt();
+                    $addPrdt = new ProduitController();
+                    $addPrdt->addPrdt();
                     ?>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="tables d-flex w-100 m-2 p-2">
+    <div class="tables d-flex flex-column justify-content-between w-100 m-2 p-2">
+        <div class="d-flex justify-content-between">
+            <h3 class="text-secondary"><u>Listes des produits</u></h3>
+            <button class="btn btn-dark" id="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter un produit</button>
+            <button class="btn btn-dark" id="btnPlus" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+        </div>
 
         <div class="table1 border border-success m-2 p-2 rounded w-100">
-            <h2 class="text-secondary"><u>Listes des produits</u></h2>
+
             <div>
-                <table class="table">
+                <table class="table table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">id</th>

@@ -1,3 +1,11 @@
+<?php include_once "Views/Includes/header.php" ?>
+<?php 
+include_once "Controllers/UsersController.php";
+include_once "Models/UsersModel.php";
+
+$addUser = new UsersController();
+$addUser->register();
+?>
 <section class="d-flex">
     <div class="w-50 d-flex align-items-center justify-content-center">
         <form onsubmit="return(validation())" method="POST" class="d-flex flex-column w-75">
@@ -17,7 +25,7 @@
             <div id="error2" class="text-danger mb-1"></div>
 
             <label class="mb-1">Confirmer le mot de passe</label>
-            <input id="mdp2" class="mb-1" type="password">
+            <input id="mdp2" class="mb-1" type="password" name="passwordConf">
             <div id="error3" class="text-danger mb-1"></div>
 
             <button name="submit" type="submit" class="botona btn btn-success mb-4 mt-3">S'inscrire</button>
@@ -30,3 +38,4 @@
     </div>
 </section>
 
+<?php include_once "Views/Includes/footer.php" ?>

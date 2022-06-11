@@ -1,4 +1,3 @@
-<?php include_once "Views/Includes/header.php" ?>
 <?php
 
 require_once 'autoload.php';
@@ -7,6 +6,7 @@ $home = new HomeController();
 
 $pages = [
     'index',
+    'about',
     'boutique',
     'DetailProduct',
     'deleteProduit',
@@ -29,4 +29,3 @@ if (isset($_GET['url'])) {
     $home->index('index');
 }
 ?>
-<?php include_once "Views/Includes/footer.php" ?>

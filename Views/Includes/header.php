@@ -30,14 +30,14 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto active" href="index">Accueill</a></li>
-                <li><a class="nav-link scrollto" href="#about">A propos</a></li>
+                <li><a class="nav-link scrollto" href="about">A propos</a></li>
                 <li class="dropdown"><a href="boutique"><span>Boutique</span> <i class="far fa-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Huiles</a></li>
-                        <li><a href="#">Crèmes</a></li>
-                        <li><a href="#">Baumes à lèvres</a></li>
-                        <li><a href="#">Parfums</a></li>
-                        <li><a href="#">Packs</a></li>
+                        <li><a href="boutique">Huiles</a></li>
+                        <li><a href="boutique">Crèmes</a></li>
+                        <li><a href="boutique">Baumes à lèvres</a></li>
+                        <li><a href="boutique">Parfums</a></li>
+                        <li><a href="boutique">Packs</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
