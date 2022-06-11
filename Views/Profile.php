@@ -5,7 +5,7 @@
             <h1>Bienvenue "Safia Maani"</h1>
             <div>
                 <button type="button" class="btn btn-dark"><a href="boutique" class="text-white">Passer une commande</a></button>
-                <button type="button" class="btn btn-secondary">Se déconnecter</button>
+                <button type="button" class="btn btn-secondary"><a href="Deconnexion">Se déconnecter</a></button>
             </div>
         </div>
         <div class="border border-success mb-2 p-2 rounded">

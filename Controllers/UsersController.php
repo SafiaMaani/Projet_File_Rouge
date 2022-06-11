@@ -30,23 +30,25 @@ class UsersController
 
 			$result = UsersModel::login($data);
 
-			echo '<pre>';
-			var_dump($result);
-			echo $result->email;
-			echo '</pre>';
-
-			if ($result->email === $_POST['email'] && $_POST['password'] === $result->password) {
+			if ($result->email === $_POST['email'] && $result->password === $_POST['password']) {
 
 				$_SESSION['logged'] = true;
 				$_SESSION['email'] = $result->email;
-				// Redirect::to('home');
-				header('Location:Profile');
+				$_SESSION['role'] = $result->role;
+
+				if ($result->role === 'admin') {
+					$_SESSION['role'] = 'admin';
+					header('Location:Dashboard');
+				} else {
+					$_SESSION['role'] = 'client';
+					header('Location:Profile');
+				}
 			} else {
-				// Session::set('error','Pseudo ou mot de passe est incorrect');
-				// Redirect::to('login');
-				// header('Location:SignIn');
-				echo 'WHAT THE FUCK IS GOING ON';	
+				header('Location:SignIn');
 			}
 		}
+	}
+	static public function logout(){
+		session_destroy();
 	}
 }

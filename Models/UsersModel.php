@@ -17,8 +17,7 @@ class UsersModel{
 	static public function login($data){
 		$email = $data['email'];
 		try{
-			$query = 'SELECT * FROM user WHERE email=:email';
-			$stmt = DB::connexion()->prepare($query);
+			$stmt = DB::connexion()->prepare('SELECT * FROM user WHERE email=:email');
 			$stmt->execute(array(":email" => $email));
 			$user = $stmt->fetch(PDO::FETCH_OBJ);
 			return $user;

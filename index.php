@@ -8,6 +8,7 @@ $pages = [
     'index',
     'about',
     'boutique',
+    'Deconnexion',
     'DetailProduct',
     'deleteProduit',
     'updateProduit',
