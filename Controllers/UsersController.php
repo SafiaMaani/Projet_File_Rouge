@@ -14,7 +14,7 @@ class UsersController
 			);
 			$result = UsersModel::createUser($data);
 			if ($result === 'ok') {
-				header('Location:SignIn');
+				Redirect::to('SignIn');
 			} else {
 				echo $result;
 			}
@@ -42,13 +42,13 @@ class UsersController
 
 				if ($result->role === 'admin') {
 					$_SESSION['role'] = 'admin';
-					header('Location:Dashboard');
+					Redirect::to('Dashboard');
 				} else {
 					$_SESSION['role'] = 'client';
-					header('Location:Profile');
+					Redirect::to('Profile');
 				}
 			} else {
-				header('Location:SignIn');
+				Redirect::to('SignIn');
 			}
 		}
 	}

@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION['logged'] == true) {
+if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
 ?>
     <div class="d-flex bg-light">
 
@@ -138,5 +138,5 @@ if ($_SESSION['logged'] == true) {
         </div>
     </div>
 <?php } else {
-    header('Location:SignIn');
+        Redirect::to('SignIn');
 }

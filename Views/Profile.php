@@ -1,5 +1,6 @@
 <?php 
-if(isset($_SESSION['logged'])){
+if(isset($_SESSION['logged']) && $_SESSION['role'] === 'client'){
+
 include_once "Views/Includes/header.php";
 
 $user = new UsersController();
@@ -30,5 +31,5 @@ $user->signIn();
 
 <?php include_once "Views/Includes/footer.php" ?>
 <?php }else{
-    header('Location:SignIn');
+    Redirect::to('SignIn');
 }
