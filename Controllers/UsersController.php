@@ -34,6 +34,10 @@ class UsersController
 
 				$_SESSION['logged'] = true;
 				$_SESSION['email'] = $result->email;
+				$_SESSION['full_name'] = $result->full_name;
+				$_SESSION['password'] = $result->password;
+				$_SESSION['adresse'] = $result->adresse;
+				$_SESSION['telephone'] = $result->telephone;
 				$_SESSION['role'] = $result->role;
 
 				if ($result->role === 'admin') {
