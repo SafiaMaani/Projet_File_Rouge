@@ -10,6 +10,8 @@ class UsersController
 				'full_name' => $_POST['full_name'],
 				'password' => $_POST['password'],
 				'email' => $_POST['email'],
+				'telephone' => $_POST['telephone'],
+				'adresse' => $_POST['adresse'],
 				'role' => 'client'
 			);
 			$result = UsersModel::createUser($data);

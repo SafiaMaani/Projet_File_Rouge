@@ -16,27 +16,37 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
                     </div>
                     <div class="modal-body">
                         <form method="post" class="d-flex flex-column">
-                            <label class="mb-1">Nom : </label>
-                            <input class="mb-1" type="text" name="name">
+
+                            <div class="row">
+                                <div class="col">
+                                    <label class="mb-1">Nom : </label>
+                                    <input class="mb-1 form-control" type="text" name="name">
+                                </div>
+                                <div class="col">
+                                    <label class="mb-1">Image</label>
+                                    <input class="mb-1 form-control" type="file" name="img">
+                                </div>
+                            </div>
 
                             <label class="mb-1">Description</label>
                             <textarea class="form-control md-textarea rounded-0 border-dark" name="description"></textarea>
 
 
-                            <div class="d-flex">
-                                <div class="w-50 p-2">
+                            <div class="row">
+                                <div class="col">
                                     <label class="mb-1">Prix :</label>
-                                    <input class="mb-1 w-100" type="number" name="prix">
+                                    <input class="mb-1 form-control" type="number" name="prix">
                                 </div>
-                                <div class="w-50  p-2">
+                                <div class="col">
                                     <label class="mb-1">Quantité :</label>
-                                    <input class="mb-1 w-100" type="number" name="quantite">
+                                    <input class="mb-1 form-control" type="number" name="quantite">
                                 </div>
                             </div>
-                            <div class="d-flex">
-                                <div class="w-50  p-2">
+                            
+                            <div class="row">
+                                <div class="col">
                                     <label class="mb-1">Catégorie :</label>
-                                    <select name="categorie" class="mb-1 w-100">
+                                    <select name="categorie" class="mb-1 form-control">
                                         <option>Huiles</option>
                                         <option>Baumes</option>
                                         <option>Cremes</option>
@@ -44,18 +54,15 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
                                         <option>Packs</option>
                                     </select>
                                 </div>
-                                <div class="w-50  p-2">
+                                <div class="col">
                                     <label class="mb-1">Nom de la cooperative :</label>
-                                    <select name="coop_name" class="mb-1 w-100">
+                                    <select name="coop_name" class="mb-1 form-control">
                                         <option>Atmare</option>
                                         <option>Timar bladi</option>
                                         <option>Tanmiya lbachariya</option>
                                     </select>
                                 </div>
                             </div>
-
-                            <label class="mb-1">Image</label>
-                            <input class="mb-1" type="file" name="img">
 
                             <div class="modal-footer">
                                 <button type="submit" name="addPrdt" class="btn btn-dark" data-bs-dismiss="modal">
@@ -138,5 +145,5 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
         </div>
     </div>
 <?php } else {
-        Redirect::to('SignIn');
+    Redirect::to('SignIn');
 }
