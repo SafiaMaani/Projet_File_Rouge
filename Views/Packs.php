@@ -7,14 +7,21 @@
         <?php
         $data = new ProduitController();
         $produits = $data->getOneCategorie();
-        
+
         foreach ($produits as $produit) {
         ?>
-            <div class="cards w-25 p-2" style="height: 300px;">
+            <div class="cards w-25 p-4" style="height: 300px;">
                 <div class="text-center" style="height: 100%;">
-                    <img src="Views/assets/img/boutique/<?= $produit['categorie'] ?>/<?= $produit['img'] ?>" alt="huile" style="width:100%; height : 80%;">
-                    <h5><?= $produit['name'] ?></h5>
-                    <button class="btn btn-dark" style="height: 13%;">Ajouter au panier</button>
+                    <form method="post" action="DetailProduct" style="height: 100%; height : 100%;">
+                        <input type="hidden" name="id_produit" value="<?php echo $produit['id_produit']; ?>">
+                        <button class="btn" style="width:100%; height : 90%;">
+                            <img src="Views/assets/img/boutique/<?= $produit['categorie'] ?>/<?= $produit['img'] ?>" alt="huile" style="width:100%; height : 100%;">
+                        </button>
+                        <h5><?= $produit['name'] ?></h5>
+                    </form>
+                    <a href="Panier">
+                        <button class="btn btn-dark">Ajouter au panier</button>
+                    </a>
                 </div>
             </div>
         <?php

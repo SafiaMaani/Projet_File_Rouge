@@ -33,11 +33,11 @@
                     <li><a class="nav-link scrollto" href="about">A propos</a></li>
                     <li class="dropdown"><a href="boutique"><span>Boutique</span> <i class="far fa-chevron-down"></i></a>
                         <ul>
-                            <li><a href="boutique">Huiles</a></li>
-                            <li><a href="boutique">Crèmes</a></li>
-                            <li><a href="boutique">Baumes à lèvres</a></li>
-                            <li><a href="boutique">Parfums</a></li>
-                            <li><a href="boutique">Packs</a></li>
+                            <li><a href="Huiles">Huiles</a></li>
+                            <li><a href="Cremes">Crèmes</a></li>
+                            <li><a href="Baumes">Baumes à lèvres</a></li>
+                            <li><a href="Parfums">Parfums</a></li>
+                            <li><a href="Packs">Packs</a></li>
                         </ul>
                     </li>
                     <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
