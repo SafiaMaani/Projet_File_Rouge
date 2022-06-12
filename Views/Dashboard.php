@@ -7,7 +7,7 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
         <?php include_once "Views/Includes/sidebar/index.php" ?>
 
         <!-- Modal Ajout Produit-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -15,12 +15,13 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" class="d-flex flex-column">
+                        <form onsubmit="return(validation())" method="post" class="d-flex flex-column">
 
                             <div class="row">
                                 <div class="col">
                                     <label class="mb-1">Nom : </label>
-                                    <input class="mb-1 form-control" type="text" name="name">
+                                    <input id="full_name" class="mb-1 form-control" type="text" name="name">
+                                    <div id="error4" class="text-danger mb-1"></div>
                                 </div>
                                 <div class="col">
                                     <label class="mb-1">Image</label>
@@ -29,20 +30,25 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
                             </div>
 
                             <label class="mb-1">Description</label>
-                            <textarea class="form-control md-textarea rounded-0 border-dark" name="description"></textarea>
+                            <textarea id="description" class="form-control md-textarea rounded-0 border-dark" name="description"></textarea>
+                            <div id="error7" class="text-danger mb-1"></div>
 
 
                             <div class="row">
                                 <div class="col">
                                     <label class="mb-1">Prix :</label>
                                     <input class="mb-1 form-control" type="number" name="prix">
+                                    <div id="error8" class="text-danger mb-1"></div>
+
                                 </div>
                                 <div class="col">
                                     <label class="mb-1">Quantité :</label>
                                     <input class="mb-1 form-control" type="number" name="quantite">
+                                    <div id="error9" class="text-danger mb-1"></div>
+
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col">
                                     <label class="mb-1">Catégorie :</label>
@@ -82,8 +88,8 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
         <div class="tables d-flex flex-column justify-content-between w-100 m-2 p-2">
             <div class="d-flex justify-content-between">
                 <h3 class="text-secondary"><u>Listes des produits</u></h3>
-                <button class="btn btn-dark" id="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter un produit</button>
-                <button class="btn btn-dark" id="btnPlus" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+                <button class="btn btn-dark" id="btn" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ajouter un produit</button>
+                <button class="btn btn-dark" id="btnPlus" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+</button>
             </div>
 
             <div class="table1 border border-success m-2 p-2 rounded w-100">
@@ -144,6 +150,8 @@ if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
             </div>
         </div>
     </div>
+    <script src="Views/assets/js/js.js"></script>
+
 <?php } else {
     Redirect::to('SignIn');
 }

@@ -55,4 +55,4 @@ $addUser->register();
         <img class="w-75" src="Views/assets/img/logo.jpg" alt="">
     </div>
 </section>
-<script src="Views/assets/js/js.js"></script>
+<?php include_once "Views/Includes/footer.php"; ?>

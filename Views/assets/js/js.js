@@ -80,6 +80,8 @@ function validation() {
     if (email.value.trim() === "") {
         email.style.borderColor = "red";
         errorMessage_1.textContent = "Veuillez entrer votre email !";
+        // window.alert("Veuillez entrer votre email !");
+        console.log(email.value);
         return false;
     }
     //Email VALIDE

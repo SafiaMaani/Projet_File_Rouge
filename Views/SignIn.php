@@ -29,7 +29,9 @@ if (!isset($_SESSION['logged'])) {
             <img class="w-75" src="Views/assets/img/logo.jpg" alt="">
         </div>
     </section>
-    <script src="Views/assets/js/js.js"></script>
+
+    <?php include_once "Views/Includes/footer.php"; ?>
+    
 <?php } else {
     if ($_SESSION['role'] == 'admin') {
         Redirect::to('Dashboard');
