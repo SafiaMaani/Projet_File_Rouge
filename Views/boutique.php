@@ -13,7 +13,7 @@
             <div class="cards w-25 p-3" style="height: 300px;">
                 <div class="text-center" style="height: 100%;">
                     <img src="Views/assets/img/boutique/<?= $produit['categorie'] ?>/<?= $produit['img'] ?>" alt="huile" style="width:100%; height : 80%;">
-                    <h5 style="width:80%; height: 5%;"><?= $produit['name'] ?></h5>
+                    <h5><?= $produit['name'] ?></h5>
                     <button class="btn btn-dark" style="height: 13%;">Ajouter au panier</button>
                 </div>
             </div>
