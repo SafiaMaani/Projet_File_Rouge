@@ -10,11 +10,11 @@
             <div class="col-lg-12 d-flex justify-content-center">
                 <ul id="portfolio-flters">
                     <li class="btn active"><a href="boutique" class="text-dark">Tous les produits</a></li>
-                    <li class="btn"><a href="Huiles?categ=Huiles" class="text-dark">Huiles</a></li>
-                    <li class="btn"><a href="Cremes?categ=Cremes" class="text-dark">Crèmes</a></li>
-                    <li class="btn"><a href="Baumes?categ=Baumes" class="text-dark">Baumes à lèvres</a></li>
-                    <li class="btn"><a href="Parfums?categ=Parfums" class="text-dark">Parfums</a></li>
-                    <li class="btn"><a href="Packs?categ=Packs" class="text-dark">Packs</a></li>
+                    <li class="btn"><a href="Huiles" class="text-dark">Huiles</a></li>
+                    <li class="btn"><a href="Cremes" class="text-dark">Crèmes</a></li>
+                    <li class="btn"><a href="Baumes" class="text-dark">Baumes à lèvres</a></li>
+                    <li class="btn"><a href="Parfums" class="text-dark">Parfums</a></li>
+                    <li class="btn"><a href="Packs" class="text-dark">Packs</a></li>
                 </ul>
             </div>
         </div>

@@ -66,8 +66,7 @@ class ProduitController
 
 	public function getOneCategorie()
 	{
-			$categorie = $_GET['url'];
-			$result = ProduitModel::getCategorie($categorie);
+			$result = ProduitModel::getCategorie($_GET['url']);
 			return $result;
 	}
 }
