@@ -62,4 +62,12 @@ class ProduitModel
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    static public function getCategorie($categorie)
+    {
+        $stmt = DB::connexion()->prepare("SELECT * FROM produit WHERE categorie = '$categorie'");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
 }

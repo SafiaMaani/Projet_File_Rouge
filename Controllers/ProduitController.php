@@ -63,4 +63,11 @@ class ProduitController
 			return $result;
 		}
 	}
+
+	public function getOneCategorie()
+	{
+			$categorie = $_GET['url'];
+			$result = ProduitModel::getCategorie($categorie);
+			return $result;
+	}
 }
