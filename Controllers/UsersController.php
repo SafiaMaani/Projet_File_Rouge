@@ -40,7 +40,6 @@ class UsersController
 				$_SESSION['password'] = $result->password;
 				$_SESSION['adresse'] = $result->adresse;
 				$_SESSION['telephone'] = $result->telephone;
-				$_SESSION['role'] = $result->role;
 
 				if ($result->role === 'admin') {
 					$_SESSION['role'] = 'admin';

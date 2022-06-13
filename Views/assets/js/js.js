@@ -17,8 +17,7 @@ const errorMessage_4 = document.getElementById("error4");
 const errorMessage_5 = document.getElementById("error5");
 const errorMessage_6 = document.getElementById("error6");
 
-function validation() {
-
+function validationSignUp() {
     //Nom not EMPTY
     if (nom.value.trim() === "") {
         nom.style.borderColor = "red";
@@ -65,7 +64,7 @@ function validation() {
         errorMessage_6.textContent = "Veuillez entrer votre adresse !";
         return false;
     }
-    //Adresse > 50 caractères    
+    //Adresse > 50 caractères
     else if (adresse.value.length < 25) {
         adresse.style.borderColor = "red";
         errorMessage_6.textContent =
@@ -85,8 +84,7 @@ function validation() {
         return false;
     }
     //Email VALIDE
-    else
-    if (regExEmail.test(email.value) == false) {
+    else if (regExEmail.test(email.value) == false) {
         email.style.borderColor = "red";
         errorMessage_1.textContent = "Veuillez entrer un email valid!";
         return false;
@@ -120,24 +118,71 @@ function validation() {
     }
 
     //MOT DE PASSE (confirmation)
-    if (passwordConf.value.trim() === '') {
-        passwordConf.style.borderColor = 'red'
-        errorMessage_3.textContent = 'Veuillez confirmer le mot de passe'
-        return false
+    if (passwordConf.value.trim() === "") {
+        passwordConf.style.borderColor = "red";
+        errorMessage_3.textContent = "Veuillez confirmer le mot de passe";
+        return false;
     } else if (passwordConf.value.length <= 8) {
-        passwordConf.style.borderColor = 'red'
-        errorMessage_3.textContent = 'Veuillez entrer un mot de passe qui dépasse 8 caractères'
-        return false
+        passwordConf.style.borderColor = "red";
+        errorMessage_3.textContent =
+            "Veuillez entrer un mot de passe qui dépasse 8 caractères";
+        return false;
     } else {
-        passwordConf.style.borderColor = 'green'
-        errorMessage_3.textContent = ''
+        passwordConf.style.borderColor = "green";
+        errorMessage_3.textContent = "";
     }
     //Psw1 == Psw2
     if (password.value != passwordConf.value) {
-        errorMessage_2.textContent = errorMessage_3.textContent = 'Les 2 mots de passe doivent etre identiques !';
-        password.style.borderColor = passwordConf.style.borderColor = 'red';
+        errorMessage_2.textContent = errorMessage_3.textContent =
+            "Les 2 mots de passe doivent etre identiques !";
+        password.style.borderColor = passwordConf.style.borderColor = "red";
         return false;
     }
 
+    return true;
+}
+
+function validationSignIn() {
+    //Email not EMPTY
+    if (email.value.trim() === "") {
+        email.style.borderColor = "red";
+        errorMessage_1.textContent = "Veuillez entrer votre email !";
+        // window.alert("Veuillez entrer votre email !");
+        console.log(email.value);
+        return false;
+    }
+    //Email VALIDE
+    else if (regExEmail.test(email.value) == false) {
+        email.style.borderColor = "red";
+        errorMessage_1.textContent = "Veuillez entrer un email valid!";
+        return false;
+    } else {
+        email.style.borderColor = "green";
+        errorMessage_1.textContent = "";
+    }
+
+    //Mot de passe not EMPTY
+    if (password.value.trim() === "") {
+        password.style.borderColor = "red";
+        errorMessage_2.textContent = "Veuillez entrer votre mot de passe !";
+        return false;
+    }
+    //Mot de passe > 8 caractères
+    else if (password.value.length < 8) {
+        password.style.borderColor = "red";
+        errorMessage_2.textContent =
+            "Veuillez entrer un mot de passe de 8 caractères au moins !";
+        return false;
+    }
+    //Mot de passe *uniquement alphanumérique*
+    else if (regExPsw.test(password.value) == false) {
+        password.style.borderColor = "red";
+        errorMessage_2.textContent =
+            "Veuillez entrer un mot de passe qui comporte uniquement des lettres et chiffres !";
+        return false;
+    } else {
+        password.style.borderColor = "green";
+        errorMessage_2.textContent = "";
+    }
     return true;
 }

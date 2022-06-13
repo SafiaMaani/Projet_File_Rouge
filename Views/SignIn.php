@@ -8,7 +8,7 @@ if (!isset($_SESSION['logged'])) {
 ?>
     <section class="d-flex">
         <div class="w-50 d-flex align-items-center justify-content-center">
-            <form onsubmit="return(validation())" method="POST" class="d-flex flex-column w-75">
+            <form onsubmit="return(validationSignIn())" method="POST" class="d-flex flex-column w-75">
 
                 <h1 class="text-center p-3">Connexion</h1>
 
