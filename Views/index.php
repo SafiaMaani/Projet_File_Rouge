@@ -92,3 +92,4 @@
 </main>
 <!-- End #main -->
 
+<?php include_once "Views/Includes/footer.php" ?>
