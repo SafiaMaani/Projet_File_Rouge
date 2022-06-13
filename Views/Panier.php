@@ -1,48 +1,34 @@
 <?php include_once "Views/Includes/header.php" ?>
 <div class="d-flex mt-5 p-5">
-    <div class="panier w-50 p-3 border-end border-3">
+    <div class="panier w-75 p-3 border-end border-3">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">img</th>
                     <th scope="col">Nom</th>
+                    <th scope="col"></th>
                     <th scope="col">Quantité</th>
                     <th scope="col">Total</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="w-25"><img src="Views/assets/img/boutique/Baumes/baume.jpg" alt="teswira" class="w-100"></td>
-                    <td>montaj
-                        <button class="btn btn-dark">retirer</button>
-                    </td>
-                    <td><input type="number" value="1" class="w-25"></td>
-                    <td>12 dh</td>
-                </tr>
-                <tr>
-                    <td class="w-25"><img src="Views/assets/img/boutique/Baumes/baume.jpg" alt="teswira" class="w-100"></td>
-                    <td>montaj
-                        <button class="btn btn-dark">retirer</button>
-                    </td>
-                    <td><input type="number" value="1" class="w-25"></td>
-                    <td>12 dh</td>
-                </tr>
-                <tr>
-                    <td class="w-25"><img src="Views/assets/img/boutique/Baumes/baume.jpg" alt="teswira" class="w-100"></td>
-                    <td>montaj
-                        <button class="btn btn-dark">retirer</button>
-                    </td>
-                    <td><input type="number" value="1" class="w-25"></td>
-                    <td>12 dh</td>
-                </tr>
-                <tr>
-                    <td class="w-25"><img src="Views/assets/img/boutique/Baumes/baume.jpg" alt="teswira" class="w-100"></td>
-                    <td>montaj
-                        <button class="btn btn-dark">retirer</button>
-                    </td>
-                    <td><input type="number" value="1" class="w-25"></td>
-                    <td>12 dh</td>
-                </tr>
+                <?php
+                $data = new PanierController();
+                $panierProducts = $data->getAllProduitInPanier($_SESSION['id_user']);
+
+                foreach ($panierProducts as $panierProduct) :
+                ?>
+                    <tr>
+                        <td class="w-25"><img src="Views/assets/img/boutique/<?= $panierProduct['categorie'] ?>/<?= $panierProduct['img'] ?>" alt="teswira" class="w-50 "></td>                       
+                        <td><?= $panierProduct['name'] ?> </td>                           
+                        <td><button class="btn btn-dark">retirer</button></td>                     
+                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="1"> </td>    
+                        <td><?= $panierProduct['prix'] ?> MAD</td>
+                    </tr>
+                <?php
+                endforeach;
+                ?>
+
             </tbody>
         </table>
         <div class="row">

@@ -35,6 +35,7 @@ class UsersController
 			if ($result->email === $_POST['email'] && $result->password === $_POST['password']) {
 
 				$_SESSION['logged'] = true;
+				$_SESSION['id_user'] = $result->id_user;
 				$_SESSION['email'] = $result->email;
 				$_SESSION['full_name'] = $result->full_name;
 				$_SESSION['password'] = $result->password;
