@@ -19,9 +19,6 @@
                         </button>
                         <h5><?= $produit['name'] ?></h5>
                     </form>
-                    <a href="Panier">
-                        <button class="btn btn-dark">Ajouter au panier</button>
-                    </a>
                 </div>
             </div>
         <?php
