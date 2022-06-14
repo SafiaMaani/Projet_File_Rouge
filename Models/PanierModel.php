@@ -1,6 +1,6 @@
 <?php
 
-class PanierModel 
+class PanierModel
 {
     static public function add($data)
     {
@@ -21,5 +21,13 @@ class PanierModel
         $stmt->execute();
 
         return $stmt->fetchAll();
+    }
+
+    static public function delete($id)
+    {
+        $stmt = DB::connexion()->prepare("DELETE FROM panier WHERE id_produit = $id");
+        if ($stmt->execute()) {
+            return 'ok';
+        }
     }
 }

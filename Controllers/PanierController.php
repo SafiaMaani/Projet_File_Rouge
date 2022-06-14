@@ -31,8 +31,21 @@ class PanierController
 		if (isset($_SESSION['logged'])) {
 			$cltPanier = PanierModel::getAll($id);
 			return $cltPanier;
-		}else{
+		} else {
 			Redirect::to('boutique');
+		}
+	}
+
+	public function deleteProduitFromPanier()
+	{
+		if (isset($_POST['retirerProduit'])) {
+
+			$id = $_POST['id_produit'];
+			$result = PanierModel::delete($id);
+
+			if ($result === 'ok') {
+				header('Location:Panier');
+			}
 		}
 	}
 }

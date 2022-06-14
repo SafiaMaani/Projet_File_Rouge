@@ -19,10 +19,15 @@
                 foreach ($panierProducts as $panierProduct) :
                 ?>
                     <tr>
-                        <td class="w-25"><img src="Views/assets/img/boutique/<?= $panierProduct['categorie'] ?>/<?= $panierProduct['img'] ?>" alt="teswira" class="w-50 "></td>                       
-                        <td><?= $panierProduct['name'] ?> </td>                           
-                        <td><button class="btn btn-dark">retirer</button></td>                     
-                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="1"> </td>    
+                        <td class="w-25"><img src="Views/assets/img/boutique/<?= $panierProduct['categorie'] ?>/<?= $panierProduct['img'] ?>" alt="teswira" class="w-50 "></td>
+                        <td><?= $panierProduct['name'] ?></td>
+                        <td>
+                            <form method="post" class="mr-1" action="deleteProduit">
+                                <input type="hidden" name="id_produit" value="<?= $panierProduct['id_produit']; ?>">
+                                <button type="submit" class="btn btn-dark" name="retirerProduit">retirer</button>
+                            </form>
+                        </td>
+                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="1"> </td>
                         <td><?= $panierProduct['prix'] ?> MAD</td>
                     </tr>
                 <?php

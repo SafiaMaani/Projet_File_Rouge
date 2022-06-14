@@ -1,6 +1,12 @@
 <?php
 
 if (isset($_POST['delete'])) {
-    $byeProf = new ProduitController();
-    $byeProf->deleteProduit();
+    $byeProduit = new ProduitController();
+    $byeProduit->deleteProduit();
+}
+
+if(isset($_POST['retirerProduit'])){
+    $retirerProduit = new PanierController();
+    $retirerProduit->deleteProduitFromPanier();
+
 }
