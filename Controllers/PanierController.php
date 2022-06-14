@@ -40,8 +40,8 @@ class PanierController
 	{
 		if (isset($_POST['retirerProduit'])) {
 
-			$id = $_POST['id_produit'];
-			$result = PanierModel::delete($id);
+			$id_produit = $_POST['id_produit'];
+			$result = PanierModel::delete($id_produit, $_SESSION['id_user']);
 
 			if ($result === 'ok') {
 				header('Location:Panier');

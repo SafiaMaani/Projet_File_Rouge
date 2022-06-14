@@ -23,9 +23,9 @@ class PanierModel
         return $stmt->fetchAll();
     }
 
-    static public function delete($id)
+    static public function delete($id_produit,$id_user)
     {
-        $stmt = DB::connexion()->prepare("DELETE FROM panier WHERE id_produit = $id");
+        $stmt = DB::connexion()->prepare("DELETE FROM panier WHERE id_produit = $id_produit AND id_user = $id_user");
         if ($stmt->execute()) {
             return 'ok';
         }

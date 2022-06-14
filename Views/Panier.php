@@ -27,8 +27,8 @@
                                 <button type="submit" class="btn btn-dark" name="retirerProduit">retirer</button>
                             </form>
                         </td>
-                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="1"> </td>
-                        <td><?= $panierProduct['prix'] ?> MAD</td>
+                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="1" id="qte"> </td>
+                        <td class="d-fle"><p id="prixUnitaire"><?= $panierProduct['prix'] ?></p> <span> Dh</span></td>
                     </tr>
                 <?php
                 endforeach;
@@ -86,4 +86,20 @@
         </form>
     </div>
 </div>
+<script>
+    const qte = document.getElementById('qte');
+    const prixUnitaire = document.getElementById('prixUnitaire');
+
+
+    // function calculerTotal() {
+        let total = qte*parseInt(prixUnitaire);
+        let totals = parseInt(total);
+        console.log(qte.value);
+        console.log(prixUnitaire.textContent);
+        console.log(total);
+        console.log(totals);
+
+        // document.getElementById('total').innerText = total;
+    // }
+</script>
 <?php include_once "Views/Includes/footer.php" ?>
