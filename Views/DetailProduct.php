@@ -8,6 +8,10 @@
 
         $addToPanier = new PanierController();
         $addToPanier->addToPanier();
+
+        $notification = new PanierController();
+        $msg = $notification->notification();
+
         ?>
         <div class="col-6">
             <img class="mx-5 w-75" style="height: 22rem;" src="Views/assets/img/boutique/<?= $produit['categorie'] ?>/<?= $produit['img'] ?>" alt="productPicture">
@@ -26,18 +30,21 @@
             </div>
             <div class="w-100 p-2 d-flex justify-content-end">
                 <form method="post">
-                    <input type="hidden" name="id_user" value="<?php echo $_SESSION['id_user']; ?>">
-                    <input type="hidden" name="id_produit" value="<?php echo $produit['id_produit']; ?>">
-                    <input type="hidden" name="name" value="<?php echo $produit['name']; ?>">
-                    <input type="hidden" name="img" value="<?php echo $produit['img']; ?>">
-                    <input type="hidden" name="prix" value="<?php echo $produit['prix']; ?>">
-                    <input type="hidden" name="quantite" value="<?php echo $produit['quantite']; ?>">
-                    <input type="hidden" name="categorie" value="<?php echo $produit['categorie']; ?>">
-                    <button class="btn btn-dark" type="submit" name="addToPanier">Ajouter au panier</button>
+                    <input type="hidden" name="id_user" value="<?= $_SESSION['id_user']; ?>">
+                    <input type="hidden" name="id_produit" value="<?= $produit['id_produit']; ?>">
+                    <input type="hidden" name="name" value="<?= $produit['name']; ?>">
+                    <input type="hidden" name="img" value="<?= $produit['img']; ?>">
+                    <input type="hidden" name="prix" value="<?= $produit['prix']; ?>">
+                    <input type="hidden" name="quantite" value="<?= $produit['quantite']; ?>">
+                    <input type="hidden" name="categorie" value="<?= $produit['categorie']; ?>">
+                    <button class="btn btn-dark" type="submit" name="addToPanier" id="liveAlertBtn">Ajouter au panier</button>
                 </form>
             </div>
+            
+            <?= $msg; ?>
         </div>
     </div>
+</div>
 </div>
 
 <?php include_once "Views/Includes/footer.php" ?>

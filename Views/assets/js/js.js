@@ -186,3 +186,25 @@ function validationSignIn() {
     }
     return true;
 }
+// alert("Veuillez vérifier vos informations avant de valider !");
+
+function validationProduit() {
+
+    //Nom not EMPTY
+    // if (nom.value.trim() === "") {
+    //     nom.style.borderColor = "red";
+    //     errorMessage_4.textContent = "Veuillez entrer votre nom !";
+    //     return false;
+    // }
+    //Nom > 3 caractères
+    // else if (nom.value.length < 3) {
+    //     nom.style.borderColor = "red";
+    //     errorMessage_4.textContent =
+    //         "Veuillez entrer un mot de passe de 3 caractères au moins !";
+    //     return false;
+    // } else {
+    //     nom.style.borderColor = "green";
+    //     errorMessage_4.textContent = "";
+    // }
+    // return true;
+}
