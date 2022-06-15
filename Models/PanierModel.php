@@ -4,7 +4,7 @@ class PanierModel
 {
     static public function add($data)
     {
-        $stmt = DB::connexion()->prepare('INSERT INTO panier (id_produit,id_user,name,categorie,quantite,img,prix) VALUES (:id_produit,:id_user,:name,:categorie,:quantite,:img,:prix)');
+        $stmt = DB::connexion()->prepare('INSERT INTO panier (id_produit,id_user,name,categorie,quantite,img,prix) VALUES (:id_produit,:id_user,:name,:categorie,:quantite,:img,:prix) ON DUPLICATE KEY UPDATE quantite = :quantite+1');
         $stmt->bindParam(':id_produit', $data['id_produit']);
         $stmt->bindParam(':id_user', $data['id_user']);
         $stmt->bindParam(':name', $data['name']);

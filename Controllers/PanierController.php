@@ -14,8 +14,7 @@ class PanierController
 				'quantite' => $_POST['quantite'],
 				'categorie' => $_POST['categorie'],
 			);
-
-			if (isset($_SESSION['logged'])) {
+			if (isset($_SESSION['logged']) && !isset($data['id_produit'])) {
 				PanierModel::add($data);
 			} else {
 				Redirect::to('SignIn');
@@ -32,23 +31,21 @@ class PanierController
 				'prix' => $_POST['prix'],
 				'categorie' => $_POST['categorie'],
 			);
-			// echo '<pre>';
-			// var_dump($data);
-			// echo '</pre>';
-			// echo $data['prix'];
 
 			$msg = "
-			<div id='liveAlertPlaceholder' class='alert'>
-					<div class='position-fixed bottom-0 end-0 p-3 w-50' >
-						<div role='alert' aria-live='assertive' aria-atomic='true' class='h-25 w-100'>
-							<div class='toast-header h-25'>
-								<img src='Views/assets/img/boutique/{$data['categorie']}/{$data['img']}' class='rounded me-2 w-25 h-25 bg-warning' alt='productPicture'>
-								<b>{$data['name']} à {$data['prix']} Dh</b> a été ajouté a votre panier<br>
-								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close' ></button>
-							</div>
-						</div>
+			<div class='alert position-fixed bottom-0 end-0 p-0 border' style='width: 35%' id='liveAlertPlaceholder'>
+				<div  role='alert' aria-live='assertive' aria-atomic='true' class='h-100'>
+					<div class='toast-header h-50'>
+						<img src='Views/assets/img/boutique/{$data['categorie']}/{$data['img']}' class='rounded me-2 w-25 h-100 bg-warning' alt='productPicture'>
+						<strong class='me-auto'><b>{$data['prix']} Dh</b></strong>
+						<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close' ></button>	
 					</div>
-            </div>";
+					<div class='toast-body bg-white'>
+						<b>{$data['name']}</b> a été ajouté a votre panier
+					</div>
+				</div>
+			</div>
+			";
 		}
 		return $msg;
 	}
