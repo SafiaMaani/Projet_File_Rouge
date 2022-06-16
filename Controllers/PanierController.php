@@ -5,22 +5,30 @@ class PanierController
 	public function addToPanier()
 	{
 		if (isset($_POST['addToPanier'])) {
-			$data = array(
-				'id_user' => $_SESSION['id_user'],
-				'id_produit' => $_POST['id_produit'],
-				'name' => $_POST['name'],
-				'img' => $_POST['img'],
-				'prix' => $_POST['prix'],
-				'quantite' => $_POST['quantite'],
-				'categorie' => $_POST['categorie'],
-			);
-			if (isset($_SESSION['logged']) && !isset($data['id_produit'])) {
-				PanierModel::add($data);
+			if (isset($_SESSION['logged'])) {
+				$data = array(
+					'id_user' => $_SESSION['id_user'],
+					'id_produit' => $_POST['id_produit'],
+					'name' => $_POST['name'],
+					'img' => $_POST['img'],
+					'prix' => $_POST['prix'],
+					'quantite' => $_POST['quantite'],
+					'categorie' => $_POST['categorie'],
+				);
+
+				$a = PanierModel::verification($_POST['id_produit'],$_SESSION['id_user']);
+
+				if (count($a) === 1) {
+					PanierModel::updateQte($data['id_produit']);
+				} else {
+					PanierModel::add($data);
+				}
 			} else {
 				Redirect::to('SignIn');
 			}
 		}
 	}
+
 	public function notification()
 	{
 		$msg = '';
@@ -49,10 +57,19 @@ class PanierController
 		}
 		return $msg;
 	}
-	public function getAllProduitInPanier($id)
+	public function getAllProduitInPanier($id_user)
 	{
 		if (isset($_SESSION['logged'])) {
-			$cltPanier = PanierModel::getAll($id);
+			$cltPanier = PanierModel::getAll($id_user);
+
+			if (count($cltPanier) === 0) {
+				echo "<div class='alert alert-danger d-flex justify-content-between' role='alert'>
+						<div>Votre panier est vide</div>
+						<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'>
+							<span aria-hidden='true'></span>
+						</button>
+						</div>";
+			} 
 			return $cltPanier;
 		} else {
 			Redirect::to('boutique');

@@ -2,15 +2,6 @@
 <div class="d-flex mt-5 p-5">
     <div class="panier w-75 p-3 border-end border-3">
         <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">img</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col"></th>
-                    <th scope="col">Quantité</th>
-                    <th scope="col">Total</th>
-                </tr>
-            </thead>
             <tbody>
                 <?php
                 $data = new PanierController();
@@ -27,7 +18,7 @@
                                 <button type="submit" class="btn btn-dark" name="retirerProduit">retirer</button>
                             </form>
                         </td>
-                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="1" id="qte"> </td>
+                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="<?= $panierProduct['qteUni'] ?>" id="qte"></td>
                         <td class="d-fle"><p id="prixUnitaire"><?= $panierProduct['prix'] ?></p> <span> Dh</span></td>
                     </tr>
                 <?php
