@@ -29,52 +29,59 @@
 
             </tbody>
         </table>
-        <div class="row">
+        <div class="row" id="row1">
             <h6 class="col">Sous total : </h6>
             <p class="col-2" id="sousTotal"> </p>
         </div>
-        <div class="row">
+        <div class="row" id="row2">
             <h6 class="col">Livraison : </h6>
             <p class="col-2" id="livraison"></p>
         </div>
-        <div class="row border border-2">
+        <div class="row border border-2" id="row3">
             <h3 class="col">Total : </h3>
             <h4 class="col-3" id="total"></h4>
         </div>
     </div>
     <div class="validation w-50 p-3">
-        <form action="">
+        <form action="" method="POST" onsubmit="return(validationSignUp())">
             <h2><u>Infos de livraison :</u></h2>
             <div class="row">
                 <div class="mb-3 col">
                     <label for="formGroupExampleInput" class="form-label">Nom complet</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
+                    <input type="text" class="form-control" id="full_name">
+                    <div id="error4" class="text-danger mb-1"></div>
                 </div>
                 <div class="mb-3 col">
-                    <label for="formGroupExampleInput2" class="form-label">CIN</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2">
+                    <label for="formGroupExampleInput" class="form-label">Téléphone</label>
+                    <input type="text" class="form-control" id="tel">
+                    <div id="error5" class="text-danger mb-1"></div>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Adresse</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2">
+                <input type="text" class="form-control" id="adresse">
+                <div id="error6" class="text-danger mb-1"></div>
+            </div>
+            <div class="mb-3">
+                <label class="mb-1">Email</label>
+                <input class="mb-1 form-control" type="text" id="email" name="email">
+                <div id="error1" class="text-danger mb-1"></div>
             </div>
             <div class="row">
                 <div class="mb-3 col">
-                    <label for="formGroupExampleInput" class="form-label">Ville</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
+                    <label for="formGroupExampleInput2" class="form-label">CIN</label>
+                    <input type="text" class="form-control" id="cin">
                 </div>
                 <div class="mb-3 col">
                     <label for="formGroupExampleInput2" class="form-label">Code postale</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2">
+                    <input type="text" class="form-control" id="codePostale">
                 </div>
             </div>
             <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Numéro de tél</label>
-                <input type="text" class="form-control" id="formGroupExampleInput">
+
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-dark" type="button">Confirmer la commande</button>
+                <button class="btn btn-dark" type="submit">Confirmer la commande</button>
             </div>
         </form>
     </div>
