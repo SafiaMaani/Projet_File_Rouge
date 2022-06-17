@@ -18,8 +18,10 @@
                                 <button type="submit" class="btn btn-dark" name="retirerProduit">retirer</button>
                             </form>
                         </td>
-                        <td><input class="w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="<?= $panierProduct['qteUni'] ?>" id="qte"></td>
-                        <td class="d-fle"><p id="prixUnitaire"><?= $panierProduct['prix'] ?></p> <span> Dh</span></td>
+                        <td><input class="qte w-75" type="number" min="1" max="<?= $panierProduct['quantite'] ?>" value="<?= $panierProduct['qteUni'] ?>" onchange="updateTotal()"></td>
+                        <td class="d-fle">
+                            <p class="prixUnitaire"><?= $panierProduct['prix'] ?></p> <span> Dh</span>
+                        </td>
                     </tr>
                 <?php
                 endforeach;
@@ -29,15 +31,15 @@
         </table>
         <div class="row">
             <h6 class="col">Sous total : </h6>
-            <p class="col-2"> 330 Dh</p>
+            <p class="col-2" id="sousTotal"> </p>
         </div>
         <div class="row">
             <h6 class="col">Livraison : </h6>
-            <p class="col-2"> 10 Dh</p>
+            <p class="col-2" id="livraison"></p>
         </div>
         <div class="row border border-2">
             <h3 class="col">Total : </h3>
-            <h4 class="col-3"> 340 Dh</h4>
+            <h4 class="col-3" id="total"></h4>
         </div>
     </div>
     <div class="validation w-50 p-3">
@@ -77,20 +79,5 @@
         </form>
     </div>
 </div>
-<script>
-    const qte = document.getElementById('qte');
-    const prixUnitaire = document.getElementById('prixUnitaire');
 
-
-    // function calculerTotal() {
-        let total = qte*parseInt(prixUnitaire);
-        let totals = parseInt(total);
-        console.log(qte.value);
-        console.log(prixUnitaire.textContent);
-        console.log(total);
-        console.log(totals);
-
-        // document.getElementById('total').innerText = total;
-    // }
-</script>
 <?php include_once "Views/Includes/footer.php" ?>

@@ -20,6 +20,8 @@
 <!-- Template Main JS File -->
 <script src="Views/assets/js/main.js"></script>
 <script src="Views/assets/js/js.js"></script>
+<script src="Views/assets/js/total.js"></script>
+
 
 </body>
 
