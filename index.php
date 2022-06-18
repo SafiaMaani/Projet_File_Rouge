@@ -17,6 +17,8 @@ $pages = [
     'DetailProduct',
     'deleteProduit',
     'updateProduit',
+    'crudProduit',
+    'Commandes',
     'Panier',
     'Dashboard',
     'Profile',

@@ -7,6 +7,9 @@
                 $data = new PanierController();
                 $panierProducts = $data->getAllProduitInPanier($_SESSION['id_user']);
 
+                $commander = new CommandeController();
+                $commander->addToCommande();
+
                 foreach ($panierProducts as $panierProduct) :
                 ?>
                     <tr>

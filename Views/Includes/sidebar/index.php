@@ -1,11 +1,12 @@
+<?php
+if ($_SESSION['logged'] == true && $_SESSION['role'] == 'admin') {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Favicons -->
-  <link href="Views/assets/img/logo.jpg" rel="icon">
   <!-- Vendor CSS Files -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
@@ -17,16 +18,16 @@
 <body>
   <div class="wrapper d-flex ">
     <nav id="sidebar" class="active">
-      <h5><a href="" class="logo mt-3">Ecooper</a></h5>
+      <h5><a href="index" class="logo mt-3">Ecooper</a></h5>
       <ul class="list-unstyled components mt-5">
         <li>
-          <a href="Dashboard"><span class="fab fa-product-hunt"></span>Produits</a>
+          <a href="crudProduit"><span class="fab fa-product-hunt"></span>Produits</a>
         </li>
         <li class="active">
-          <a href=""><span class="fal fa-signal"></span>Statistiques</a>
+          <a href="Dashboard"><span class="fal fa-signal"></span>Statistiques</a>
         </li>
         <li>
-          <a href=""><span class="fa fa-sticky-note"></span>Commandes</a>
+          <a href="Commandes"><span class="fa fa-sticky-note"></span>Commandes</a>
         </li>
         <li>
           <a href="Deconnexion">
@@ -46,3 +47,7 @@
       <script src="Views/Includes/sidebar/js/main.js"></script>
       <!-- JavaScript Bundle with Popper MODAL -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+      <?php } else {
+    Redirect::to('SignIn');
+}
