@@ -17,7 +17,7 @@ class PanierModel
         $stmt->execute();
     }
 
-    static public function verification($id_produit,$id_user)
+    static public function verification($id_produit, $id_user)
     {
         $stmt = DB::connexion()->prepare("SELECT * FROM panier WHERE id_produit = '$id_produit' AND id_user = '$id_user'");
         $stmt->execute();
@@ -44,5 +44,12 @@ class PanierModel
         if ($stmt->execute()) {
             return 'ok';
         }
+    }
+    static public function nbrArticle($id_user)
+    {
+        $stmt = DB::connexion()->prepare("SELECT COUNT(`id_produit`) FROM panier WHERE id_user=$id_user;");
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
     }
 }

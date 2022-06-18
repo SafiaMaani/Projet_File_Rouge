@@ -1,3 +1,11 @@
+<?php
+if (isset($_SESSION['logged'])) {
+    $sommeArticle = new PanierModel();
+    $somme = $sommeArticle->nbrArticle($_SESSION['id_user']);
+}else{
+    $somme = '';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +51,7 @@
                     <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
                     <li><a href="SignIn"><i class="fal fa-user"></i></a></li>
                     <li><a href="Panier"><i class="fal fa-shopping-bag  position-relative"></i></a>
-                        <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span>
+                        <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger" style="padding: 2px;"><span><?= $somme ?></span></span>
                     </li>
                     <li><a href=""><i class="far fa-search"></i></a></li>
                 </ul>

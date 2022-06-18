@@ -43,47 +43,35 @@
         </div>
     </div>
     <div class="validation w-50 p-3">
-        <form action="" method="POST" onsubmit="return(validationSignUp())">
+        <form method="POST" onsubmit="return(validationSignUp())">
             <h2><u>Infos de livraison :</u></h2>
             <div class="row">
                 <div class="mb-3 col">
                     <label for="formGroupExampleInput" class="form-label">Nom complet</label>
-                    <input type="text" class="form-control" id="full_name">
+                    <input type="text" class="form-control" id="full_name" name="full_name" value="<?= $_SESSION['full_name']; ?>">
                     <div id="error4" class="text-danger mb-1"></div>
                 </div>
                 <div class="mb-3 col">
                     <label for="formGroupExampleInput" class="form-label">Téléphone</label>
-                    <input type="text" class="form-control" id="tel">
+                    <input type="text" class="form-control" id="tel" name="telephone" value="<?= $_SESSION['telephone']; ?>">
                     <div id="error5" class="text-danger mb-1"></div>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Adresse</label>
-                <input type="text" class="form-control" id="adresse">
+                <input type="text" class="form-control" id="adresse" name="adresse" value="<?= $_SESSION['adresse']; ?>">
                 <div id="error6" class="text-danger mb-1"></div>
             </div>
             <div class="mb-3">
                 <label class="mb-1">Email</label>
-                <input class="mb-1 form-control" type="text" id="email" name="email">
+                <input class="mb-1 form-control" type="text" id="email" name="email" value="<?= $_SESSION['email']; ?>">
                 <div id="error1" class="text-danger mb-1"></div>
             </div>
-            <div class="row">
-                <div class="mb-3 col">
-                    <label for="formGroupExampleInput2" class="form-label">CIN</label>
-                    <input type="text" class="form-control" id="cin">
-                </div>
-                <div class="mb-3 col">
-                    <label for="formGroupExampleInput2" class="form-label">Code postale</label>
-                    <input type="text" class="form-control" id="codePostale">
-                </div>
-            </div>
-            <div class="mb-3">
-
-            </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-dark" type="submit">Confirmer la commande</button>
+                <button class="btn btn-dark" type="submit" name="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Commander</button>
             </div>
         </form>
+
     </div>
 </div>
 
