@@ -1,12 +1,17 @@
-var qte = document.getElementsByClassName('qte');
-var prixUnitaire = document.getElementsByClassName('prixUnitaire');
+let qte = document.getElementsByClassName('qte');
+let prixUnitaire = document.getElementsByClassName('prixUnitaire');
+let total = document.getElementById('total');
 let sousTotal = 0
+
+let getTotal = document.getElementById('getTotal');
+let commander = document.getElementById('commander');
+
 
 function calculerTotal() {
 
     for (let i = 0; i < qte.length; i++) {
 
-        var t = qte[i].value * prixUnitaire[i].textContent;
+        let t = qte[i].value * prixUnitaire[i].textContent;
         sousTotal = sousTotal + t;
 
         document.getElementById('sousTotal').innerHTML = sousTotal + " Dh";
@@ -29,7 +34,7 @@ function calculerTotal() {
 function updateTotal() {
     sousTotal = 0;
     for (let i = 0; i < qte.length; i++) {
-        var t = qte[i].value * prixUnitaire[i].textContent;
+        let t = qte[i].value * prixUnitaire[i].textContent;
         sousTotal = sousTotal + t;
 
         document.getElementById('sousTotal').innerHTML = sousTotal + " Dh";
@@ -44,3 +49,7 @@ function updateTotal() {
     }
 }
 calculerTotal();
+
+commander.addEventListener('click', function() {
+    getTotal.value = total.innerHTML;
+})

@@ -45,6 +45,7 @@
     <div class="validation w-50 p-3">
         <form method="POST" onsubmit="return(validationSignUp())">
             <h2><u>Infos de livraison :</u></h2>
+            <input name="getTotal" type="hidden" value="" id="getTotal">
             <div class="row">
                 <div class="mb-3 col">
                     <label for="formGroupExampleInput" class="form-label">Nom complet</label>
@@ -68,7 +69,7 @@
                 <div id="error1" class="text-danger mb-1"></div>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-dark" type="submit" name="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">Commander</button>
+                <button class="btn btn-dark" type="submit" name="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" id="commander">Commander</button>
             </div>
         </form>
 
