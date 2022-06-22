@@ -17,6 +17,7 @@ Le site a deux utilisateurs:
 -Se déconnecter.
 
 *Client qui peut :*
+-Créer un compte,
 -Se connecter,
 -Voir son profile,
 -Voir tous les produits dans la boutique,
